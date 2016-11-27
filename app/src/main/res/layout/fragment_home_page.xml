@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.e450c.lvmama.fragment.HomePageFragment">
+
+
+    <include
+        android:id="@+id/homepage_title_ll"
+        layout="@layout/homefragment_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        />
+    <com.example.e450c.lvmama.widget.SmoothListView.SmoothListView
+        android:id="@+id/homepage_smoothlistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homepage_title_ll">
+
+    </com.example.e450c.lvmama.widget.SmoothListView.SmoothListView>
+
+
+</RelativeLayout>

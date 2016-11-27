@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.e450c.lvmama.fragment.UserFragment">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_up_panel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoPanelHeight="450dp"
+        sothree:umanoShadowHeight="4dp"
+        sothree:umanoDragView="@+id/ll_panl"
+        sothree:umanoScrollableView="@+id/ll_panl"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/mine_head"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mine_message"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dip"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_margin="20dip">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/avatar_unlogin_default"
+                    android:layout_weight="7"
+                    />
+                <TextView
+                    android:id="@+id/login_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="您还未登陆，点击登陆"
+                    android:layout_weight="3"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/turn_right"
+                    android:layout_weight="8"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+        <ScrollView
+            android:id="@+id/ll_panl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|top"
+            android:orientation="vertical"
+            >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            layout="@layout/user_order_ll"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@color/lightgrey" />
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                layout="@layout/user_menu_ll" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@color/lightgrey"/>
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/user_content1_ll"
+                />
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/user_content1_ll"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@color/lightgrey"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentBottom="true">
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+</RelativeLayout>

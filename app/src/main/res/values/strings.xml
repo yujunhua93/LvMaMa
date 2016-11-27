@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">LvMaMa</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="act_main_tab_string_home">home</string>
+    <string name="act_main_tab_string_sale">sale</string>
+    <string name="act_main_tab_string_destination">detination</string>
+    <string name="act_main_tab_string_periphery">periphery</string>
+    <string name="act_main_tab_string_user">user</string>
+
+
+    //城市列表
+    <string name="tocity">出发城市</string>
+
+
+    //下拉刷新，上拉加载
+    <string name="smoothlistview_header_hint_normal">下拉刷新</string>
+    <string name="smoothlistview_header_hint_ready">松开刷新数据</string>
+    <string name="smoothlistview_header_hint_loading">正在加载...</string>
+    <string name="smoothlistview_header_last_time">上次更新时间：</string>
+    <string name="smoothlistview_footer_hint_normal">查看更多</string>
+    <string name="smoothlistview_footer_hint_ready">松开载入更多</string>
+
+</resources>
