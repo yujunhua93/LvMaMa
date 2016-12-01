@@ -1,11 +1,13 @@
 package com.example.e450c.lvmama.fragment;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +15,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baozi.Zxing.CaptureActivity;
+import com.baozi.Zxing.ZXingConstants;
+
 import com.example.e450c.lvmama.R;
 import com.example.e450c.lvmama.activity.CityPickerActivity;
 import com.example.e450c.lvmama.activity.SearchAcitivity;
 import com.example.e450c.lvmama.adapter.HomepageAdapter;
 import com.example.e450c.lvmama.adapter.TravelingAdapter;
+import com.example.e450c.lvmama.entity.ChannelEntity;
 import com.example.e450c.lvmama.entity.TravelingEntity;
 import com.example.e450c.lvmama.utils.ModelUtil;
+import com.example.e450c.lvmama.view.HeaderAdViewView;
+import com.example.e450c.lvmama.view.HeaderBigMenuView;
+import com.example.e450c.lvmama.view.HeaderChannelViewView;
 import com.example.e450c.lvmama.widget.SmoothListView.SmoothListView;
-import com.uuzuche.lib_zxing.activity.CaptureActivity;
+
 
 
 import java.util.ArrayList;
@@ -44,6 +53,7 @@ public class HomePageFragment extends Fragment  {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final int TAKE_PHOTO_REQUEST_CODE = 1;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,6 +68,12 @@ public class HomePageFragment extends Fragment  {
     @BindView(R.id.QR_code)
     ImageView QRcode;
 
+    private HeaderAdViewView headerAdViewView;
+
+    private HeaderBigMenuView headerBigMenuView;
+
+    private HeaderChannelViewView headerChannelView; // 频道视图
+
     private SmoothListView smoothListView;
 
     private TravelingAdapter mAdapter;
@@ -66,7 +82,11 @@ public class HomePageFragment extends Fragment  {
 
     private List<String> images;
 
+    private List<String> adList = new ArrayList<String>();
+
     private List<TravelingEntity> travelingList = new ArrayList<>();
+
+    private List<ChannelEntity> channelList = new ArrayList<>(); // 频道数据
 
 
 
@@ -101,7 +121,7 @@ public class HomePageFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+            initData();
 
 
 
@@ -117,17 +137,37 @@ public class HomePageFragment extends Fragment  {
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
 
         ButterKnife.bind(this,view);
+
         smoothListView = (SmoothListView) view.findViewById(R.id.homepage_smoothlistview);
-        travelingList = ModelUtil.getTravelingData();
+
+        // 设置广告数据
+        headerAdViewView = new HeaderAdViewView(getActivity());
+        headerAdViewView.fillView(adList, smoothListView);
+
+//        headerChannelView = new HeaderChannelViewView(getActivity());
+//        headerChannelView.fillView(channelList, smoothListView);
+
+
+        headerBigMenuView = new HeaderBigMenuView(getActivity());
+        headerBigMenuView.fillView(channelList,smoothListView);
+
+
         mAdapter = new TravelingAdapter(getActivity(), travelingList);
         smoothListView.setAdapter(mAdapter);
         smoothListView.setRefreshEnable(true);
         smoothListView.setLoadMoreEnable(true);
 
+
+
         return view;
     }
 
-
+    private void initData() {
+        adList = ModelUtil.getAdData();
+//        channelList = ModelUtil.getChannelData();
+        channelList =ModelUtil.getChannelData();
+        travelingList = ModelUtil.getTravelingData();
+    }
 
 
     @OnClick(R.id.city_homepage)
@@ -147,8 +187,18 @@ public class HomePageFragment extends Fragment  {
 
     @OnClick(R.id.QR_code)
     public void QRcode(){
-        Intent intent = new Intent(getActivity(), CaptureActivity.class);
-        startActivityForResult(intent, 1);
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.CAMERA},
+                    TAKE_PHOTO_REQUEST_CODE);
+        }
+        else{
+            Intent intent = new Intent(getActivity(),
+                    CaptureActivity.class);
+            intent.putExtra(ZXingConstants.ScanIsShowHistory,true);
+            startActivityForResult(intent, ZXingConstants.ScanRequestCode);
+        }
     }
 
 

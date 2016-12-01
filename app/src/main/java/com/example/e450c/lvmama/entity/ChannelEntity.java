@@ -10,14 +10,16 @@ public class ChannelEntity implements Serializable {
     private String title;
     private String tips;
     private String image_url;
+    private int default_image_url;
 
     public ChannelEntity() {
     }
 
-    public ChannelEntity(String title, String tips, String image_url) {
+    public ChannelEntity(String title, String tips, String image_url,int default_image_url) {
         this.title = title;
         this.tips = tips;
         this.image_url = image_url;
+        this.default_image_url = default_image_url;
     }
 
     public String getTitle() {
@@ -42,5 +44,13 @@ public class ChannelEntity implements Serializable {
 
     public void setImage_url(String image_url) {
         this.image_url = image_url;
+    }
+
+    public int getDefault_image_url() {
+        return default_image_url;
+    }
+
+    public void setDefault_image_url(int default_image_url) {
+        this.default_image_url = default_image_url;
     }
 }
