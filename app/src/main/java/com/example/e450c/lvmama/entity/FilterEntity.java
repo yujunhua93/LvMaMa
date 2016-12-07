@@ -3,8 +3,10 @@ package com.example.e450c.lvmama.entity;
 import java.io.Serializable;
 
 /**
- * Created by sunfusheng on 16/4/23.
+ * Created by e450c on 2016/12/5.
+ * 过滤实体类
  */
+
 public class FilterEntity implements Serializable {
 
     private String key;

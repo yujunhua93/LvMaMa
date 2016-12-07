@@ -2,44 +2,56 @@ package com.example.e450c.lvmama.view;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListView;
+
 
 import com.example.e450c.lvmama.R;
 import com.example.e450c.lvmama.adapter.HeaderChannelAdapter;
-import com.example.e450c.lvmama.entity.ChannelEntity;
+import com.example.e450c.lvmama.entity.HomeBigMenuEntity;
 
 import java.util.List;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 /**
- * Created by e450c on 2016/12/1.
+ * Created by sunfusheng on 16/4/20.
  */
+public class HeaderBigMenuView extends HeaderViewInterface<List<HomeBigMenuEntity>> {
 
-public class HeaderBigMenuView extends HeaderViewInterface<List<ChannelEntity>> {
+    @BindView(R.id.gv_channel)
+    GridView gvChannel;
 
-    @BindView(R.id.homepage_bigmenu_gv)
-    FixedGirdView gvChannel;
     public HeaderBigMenuView(Activity context) {
         super(context);
     }
 
     @Override
-    protected void getView(List<ChannelEntity> list, ListView listView) {
-        View view = mInflate.inflate(R.layout.homepage_bigmenu, listView, false);
-        ButterKnife.bind(this,view);
+    protected void getView(List<HomeBigMenuEntity> list, ListView listView) {
+        View view = mInflate.inflate(R.layout.header_channel_layout, listView, false);
+        ButterKnife.bind(this, view);
+
         dealWithTheView(list);
         listView.addHeaderView(view);
     }
 
+    private void dealWithTheView(List<HomeBigMenuEntity> list) {
+        int size = list.size();
 
+        if (size <= 4) {
+            gvChannel.setNumColumns(size);
+        } else if (size == 6) {
+            gvChannel.setNumColumns(3);
+        } else if (size == 8) {
+            gvChannel.setNumColumns(4);
+        } else {
+            gvChannel.setNumColumns(4);
+        }
 
-    private void dealWithTheView(List<ChannelEntity> list) {
-
-        gvChannel.setNumColumns(4);
         HeaderChannelAdapter adapter = new HeaderChannelAdapter(mContext, list);
         gvChannel.setAdapter(adapter);
     }
+
 }

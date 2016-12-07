@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:divider="@drawable/divider"
+    android:showDividers="middle">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        >
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/mine_setting_icon"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dip"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/turn_right"
+            android:layout_margin="10dip"
+
+            android:layout_centerVertical="true"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+            android:textColor="@color/theme_gray"
+            android:layout_toEndOf="@+id/iv1"
+            android:textSize="18sp"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+              />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        >
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/mine_about_icon"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dip"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/turn_right"
+            android:layout_margin="10dip"
+            android:layout_centerVertical="true"
+            android:id="@+id/imageView2" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关于驴妈妈"
+            android:textColor="@color/theme_gray"
+            android:textSize="18sp"
+            android:layout_toEndOf="@+id/iv2"
+            android:id="@+id/textView2"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        >
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:src="@drawable/mine_survey"
+            android:layout_margin="10dip"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="参与有奖问卷"
+            android:textColor="@color/theme_gray"
+            android:layout_toRightOf="@id/iv3"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/turn_right"
+            android:layout_margin="10dip"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        >
+        <ImageView
+            android:id="@+id/iv4"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_margin="10dip"
+            android:src="@drawable/mine_phone_icon"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客服中心"
+            android:textColor="@color/theme_gray"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/iv4"
+            android:layout_centerVertical="true"
+            android:gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/turn_right"
+            android:layout_margin="10dip"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        >
+        <ImageView
+            android:id="@+id/iv5"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_margin="10dip"
+            android:src="@drawable/mine_followwechat"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关注驴妈妈中心"
+            android:textColor="@color/theme_gray"
+            android:layout_toRightOf="@id/iv5"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:gravity="center" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/turn_right"
+            android:layout_margin="10dip"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

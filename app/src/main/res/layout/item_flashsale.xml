@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="150dip"
+    android:layout_height="200dip">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image_flashsale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/discount_flashsale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="5.7折"
+                android:padding="5dip"
+                android:background="@drawable/rightbottom_corner"/>
+            <TextView
+                android:id="@+id/reminder_flashsale"
+                android:layout_width="match_parent"
+                android:layout_height="20dip"
+                android:textColor="@color/white"
+                android:text="仅剩16份"
+                android:layout_marginLeft="5dip"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:background="@color/alpha_gray"/>
+
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6">
+        <TextView
+            android:id="@+id/summary_flashsale"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/orginalprice_flashsale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="2dip"
+            android:text="12312414"/>
+        <TextView
+            android:id="@+id/presentprice_flashsale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="2dip"
+            android:text="点击了可敬了可"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

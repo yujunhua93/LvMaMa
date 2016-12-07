@@ -3,19 +3,18 @@ package com.example.e450c.lvmama.entity;
 import java.io.Serializable;
 
 /**
- * Created by sunfusheng on 16/4/20.
+ * Created by e450c on 2016/12/2.
  */
-public class ChannelEntity implements Serializable {
+
+public class HomeSmallMenuEntity implements Serializable{
 
     private String title;
     private String tips;
     private String image_url;
     private int default_image_url;
 
-    public ChannelEntity() {
-    }
 
-    public ChannelEntity(String title, String tips, String image_url,int default_image_url) {
+    public HomeSmallMenuEntity(String title, String tips, String image_url, int default_image_url) {
         this.title = title;
         this.tips = tips;
         this.image_url = image_url;

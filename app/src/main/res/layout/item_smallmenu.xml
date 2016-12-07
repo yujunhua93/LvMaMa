@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_item_clicked_with_mask"
+    android:clickable="true"
+    android:layout_margin="1dip"
+    >
+    <ImageView
+        android:id="@+id/smallmenu_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:scaleType="fitXY"
+        android:src="@color/font_black_4"/>
+
+</RelativeLayout>

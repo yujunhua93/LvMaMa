@@ -7,13 +7,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="全部订单"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        android:layout_margin="10dip"
+        android:textColor="@color/theme_gray"
         android:layout_weight="4"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_vertical|end"
+        android:layout_marginRight="10dip"
+        android:textColor="@color/theme_gray"
         android:text="查看全部订单"
         android:drawableRight="@drawable/turn_right"
+        android:drawablePadding="5dip"
         android:layout_weight="6"/>
 </LinearLayout>

@@ -1,7 +1,11 @@
 package com.example.e450c.lvmama.adapter;
 
 import android.content.Context;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -11,8 +15,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.example.e450c.lvmama.R;
 import com.example.e450c.lvmama.entity.TravelingEntity;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +37,7 @@ public class TravelingAdapter extends BaseListAdapter<TravelingEntity> {
     private int mHeight;
     public static final int ONE_SCREEN_COUNT = 7; // 一屏能显示的个数，这个根据屏幕高度和各自的需求定
     public static final int ONE_REQUEST_COUNT = 10; // 一次请求的个数
+    private Context context;
 
     public TravelingAdapter(Context context) {
         super(context);
@@ -37,6 +45,7 @@ public class TravelingAdapter extends BaseListAdapter<TravelingEntity> {
 
     public TravelingAdapter(Context context, List<TravelingEntity> list) {
         super(context, list);
+        this.context = context;
     }
 
     // 设置数据
@@ -92,14 +101,23 @@ public class TravelingAdapter extends BaseListAdapter<TravelingEntity> {
         TravelingEntity entity = getItem(position);
 
         holder.llRootView.setVisibility(View.VISIBLE);
-        if (TextUtils.isEmpty(entity.getType())) {
-            holder.llRootView.setVisibility(View.INVISIBLE);
-            return convertView;
-        }
+//        if (TextUtils.isEmpty(entity.getType())) {
+//            holder.llRootView.setVisibility(View.INVISIBLE);
+//            return convertView;
+//        }
 
-        holder.tvTitle.setText(entity.getFrom() + entity.getTitle() + entity.getType());
-        holder.tvRank.setText("排名：" + entity.getRank());
+
+        holder.tvLoactionName.setText(entity.getLocation_name());
+        holder.tvAbout.setText(entity.getAbout());
+        Glide.with(context).load(entity.getImage_url()).into(holder.ivImage);
+//        holder.tvTitle.setText(entity.getFrom() + entity.getTitle() + entity.getType());
+//        holder.tvRank.setText("排名：" + entity.getRank());
+        SpannableString spannableString = new SpannableString("￥"+entity.getPrice()+"起");
+        spannableString.setSpan(new RelativeSizeSpan(0.5f),0,1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new RelativeSizeSpan(0.5f),entity.getPrice().length()+1,entity.getPrice().length()+2,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        holder.tvPrice.setText(spannableString);
         mImageManager.loadUrlImage(entity.getImage_url(), holder.ivImage);
+
 
         return convertView;
     }
@@ -109,11 +127,12 @@ public class TravelingAdapter extends BaseListAdapter<TravelingEntity> {
         LinearLayout llRootView;
         @BindView(R.id.iv_image)
         ImageView ivImage;
-        @BindView(R.id.tv_title)
-        TextView tvTitle;
-        @BindView(R.id.tv_rank)
-        TextView tvRank;
-
+        @BindView(R.id.price)
+        TextView tvPrice;
+        @BindView(R.id.tv_about)
+        TextView tvAbout;
+        @BindView(R.id.tv_location_name)
+        TextView tvLoactionName;
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }

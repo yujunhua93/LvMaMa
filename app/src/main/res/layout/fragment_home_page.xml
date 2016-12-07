@@ -12,13 +12,29 @@
         android:layout_height="50dip"
         android:layout_alignParentTop="true"
         />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homepage_title_ll">
     <com.example.e450c.lvmama.widget.SmoothListView.SmoothListView
         android:id="@+id/homepage_smoothlistview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/homepage_title_ll">
+
+        android:background="@color/font_black_6">
 
     </com.example.e450c.lvmama.widget.SmoothListView.SmoothListView>
 
+    <ImageView
+        android:id="@+id/homepage_movetotop"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:src="@drawable/ious_icon"
+        android:scaleType="fitXY"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dip"
+        android:visibility="gone"
+        />
+    </FrameLayout>
 
 </RelativeLayout>

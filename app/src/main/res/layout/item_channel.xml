@@ -5,16 +5,12 @@
     android:layout_height="wrap_content"
     android:background="@drawable/ripple_item_clicked_with_mask"
     android:clickable="true"
-
     >
-
     <ImageView
         android:id="@+id/iv_image"
-        android:layout_width="30dip"
-        android:layout_height="30dip"
+        android:layout_width="wrap_content"
+        android:layout_height="60dip"
+        android:scaleType="fitXY"
         android:src="@color/font_black_4"/>
-
-
-
 
 </RelativeLayout>

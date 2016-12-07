@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        sothree:umanoPanelHeight="450dp"
+        sothree:umanoPanelHeight="400dip"
         sothree:umanoShadowHeight="4dp"
         sothree:umanoDragView="@+id/ll_panl"
         sothree:umanoScrollableView="@+id/ll_panl"
@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/avatar_unlogin_default"
                     android:layout_weight="7"
+
                     />
                 <TextView
                     android:id="@+id/login_tv"
@@ -70,6 +71,7 @@
             android:layout_height="match_parent"
             android:gravity="center|top"
             android:orientation="vertical"
+            android:background="@color/white"
             >
 
         <include
@@ -83,8 +85,8 @@
             <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-                layout="@layout/user_menu_ll" />
+                layout="@layout/user_menu_ll"
+                android:layout_margin="10dip"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="10dip"
@@ -94,23 +96,21 @@
                 android:layout_height="wrap_content"
                 layout="@layout/user_content1_ll"
                 />
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@color/lightgrey"/>
             <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                layout="@layout/user_content1_ll"
+                layout="@layout/user_content2_ll"
                 />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="10dip"
                 android:background="@color/lightgrey"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_alignParentBottom="true">
 
-            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

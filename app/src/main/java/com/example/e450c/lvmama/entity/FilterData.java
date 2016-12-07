@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by sunfusheng on 16/4/23.
+ * Created by e450c on 2016/12/5.
+ *
  */
 public class FilterData implements Serializable {
 

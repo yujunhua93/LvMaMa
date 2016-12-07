@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/tabheader_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dip"
+        />
+    <com.example.e450c.lvmama.widget.DragFooterView.DragContainer
+        android:id="@+id/dragcontainer_flashsale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_flashsale_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+    </com.example.e450c.lvmama.widget.DragFooterView.DragContainer>
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/tabheader_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/hot_destination_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/hot_destination_tag1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/small_tag_corner"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/hot_destination_tag2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/small_tag_corner"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/hot_destination_tag3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/small_tag_corner"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/hot_destination_tag4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/small_tag_corner"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/hot_destination_tagmore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/small_tag_corner"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

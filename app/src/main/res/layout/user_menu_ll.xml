@@ -12,16 +12,17 @@
         android:layout_weight="1"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_holiday_order_addition"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/electron_ticket"
             android:layout_gravity="center"
             android:layout_margin="5dip"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:textColor="@color/theme_gray"
+            android:layout_margin="5dip"
             android:text="电子票"/>
     </LinearLayout>
     <LinearLayout
@@ -32,16 +33,17 @@
         android:layout_weight="1"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_holiday_order_flight"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/mine_couponse_icon"
             android:layout_gravity="center"
             android:layout_margin="5dip"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:textColor="@color/theme_gray"
+            android:layout_margin="5dip"
             android:text="优惠券"/>
     </LinearLayout>
     <LinearLayout
@@ -52,16 +54,17 @@
         android:layout_weight="1"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_holiday_order_hotel_package"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/mine_wallet"
             android:layout_gravity="center"
             android:layout_margin="5dip"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:textColor="@color/theme_gray"
+            android:layout_margin="5dip"
             android:text="钱包"/>
     </LinearLayout>
     <LinearLayout
@@ -72,16 +75,17 @@
         android:layout_weight="1"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_holiday_order_other_ticket"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/user_ponit"
             android:layout_gravity="center"
             android:layout_margin="5dip"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:textColor="@color/theme_gray"
+            android:layout_margin="5dip"
             android:text="积分"/>
     </LinearLayout>
     <LinearLayout
@@ -92,16 +96,17 @@
         android:layout_weight="1"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_holiday_order_update"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/ious_icon"
             android:layout_gravity="center"
             android:layout_margin="5dip"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:textColor="@color/theme_gray"
+            android:layout_margin="5dip"
             android:text="小驴白条"/>
     </LinearLayout>
 

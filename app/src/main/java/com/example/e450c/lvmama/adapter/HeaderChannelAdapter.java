@@ -1,16 +1,14 @@
 package com.example.e450c.lvmama.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 
 import com.example.e450c.lvmama.R;
-import com.example.e450c.lvmama.entity.ChannelEntity;
+import com.example.e450c.lvmama.entity.HomeBigMenuEntity;
 
 import java.util.List;
 
@@ -20,9 +18,9 @@ import butterknife.ButterKnife;
 /**
  * Created by sunfusheng on 16/4/20.
  */
-public class HeaderChannelAdapter extends BaseListAdapter<ChannelEntity> {
+public class HeaderChannelAdapter extends BaseListAdapter<HomeBigMenuEntity> {
 
-    public HeaderChannelAdapter(Context context, List<ChannelEntity> list) {
+    public HeaderChannelAdapter(Context context, List<HomeBigMenuEntity> list) {
         super(context, list);
     }
 
@@ -37,7 +35,7 @@ public class HeaderChannelAdapter extends BaseListAdapter<ChannelEntity> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        ChannelEntity entity = getItem(position);
+        HomeBigMenuEntity entity = getItem(position);
 
         holder.ivImage.setImageResource(entity.getDefault_image_url());
 

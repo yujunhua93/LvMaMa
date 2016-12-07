@@ -29,6 +29,9 @@ public abstract class HeaderViewInterface<T> {
         return true;
     }
 
+
+
+
     protected abstract void getView(T t, ListView listView);
 
 }

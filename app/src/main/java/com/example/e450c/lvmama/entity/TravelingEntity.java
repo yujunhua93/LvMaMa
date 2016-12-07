@@ -5,13 +5,14 @@ import java.io.Serializable;
 /**
  * Created by sunfusheng on 16/4/20.
  */
-public class TravelingEntity implements Serializable, Comparable<TravelingEntity> {
+public class TravelingEntity  {
 
-    private String type; // 风景、动物、植物、建筑
-    private String title; // 标题
-    private String from; // 来源
-    private int rank; // 排名
+
+    private String location_name; // 标题
     private String image_url; // 图片地址
+    private String price;
+    private String about;
+
 
     // 暂无数据属性
     private boolean isNoData = false;
@@ -20,20 +21,19 @@ public class TravelingEntity implements Serializable, Comparable<TravelingEntity
     public TravelingEntity() {
     }
 
-    public TravelingEntity(String type, String title, String from, int rank, String image_url) {
-        this.type = type;
-        this.title = title;
-        this.from = from;
-        this.rank = rank;
+    public TravelingEntity(String location_name, String price,  String about,String image_url) {
+        this.location_name = location_name;
+        this.price = price;
         this.image_url = image_url;
+        this.about = about;
     }
 
-    public int getHeight() {
-        return height;
+    public String getLocation_name() {
+        return location_name;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setLocation_name(String location_name) {
+        this.location_name = location_name;
     }
 
     public boolean isNoData() {
@@ -44,36 +44,12 @@ public class TravelingEntity implements Serializable, Comparable<TravelingEntity
         isNoData = noData;
     }
 
-    public String getTitle() {
-        return title;
+    public int getHeight() {
+        return height;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getFrom() {
-        return from;
-    }
-
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public String getImage_url() {
@@ -84,8 +60,19 @@ public class TravelingEntity implements Serializable, Comparable<TravelingEntity
         this.image_url = image_url;
     }
 
-    @Override
-    public int compareTo(TravelingEntity another) {
-        return this.getRank() - another.getRank();
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 }
